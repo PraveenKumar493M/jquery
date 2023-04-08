@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <title>Document</title>
+
+    <style> 
+      #panel, #flip {
+        padding-top: 15px;
+        padding: 5px;
+        text-align: center;
+        background-color: #a6dc14;
+        border: solid 1px #474545;
+        width: 700px;
+      }
+      
+      #panel {
+        padding: 3px;
+        display: none;
+        width: 700px;
+      }
+     
+  
+      
+      </style>
+</head>
+<body>
+  <h1>Jquery practise</h1>
+ 
+    
+    <p>hii</p>
+    <p>hello</p>
+    
+    <button id="btn">click</button>
+    <hr>
+<div id="flip">this is slide</div>
+<div id="panel"> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Commodi beatae iusto tempora voluptatibus 
+  similique dolores exped
+  ita esse temporibus provident aliquid fuga alias sint tempore sit accusamus, doloribus doloremque, blanditiis ex.</div>
+
+  <hr>
+  <button id="clas">click</button>
+<p id="pas">content create</p>
+
+<button id="ani" class="w3-btn w3-blue">Start Animation</button>
+<div id="an" style="border:1px solid rbg(85 85 85)";background-color:rbg(85 85 85)>jquery</div>
+
+
+<script src="../jquery-3.6.4.min.js"></script>
+    <script>
+
+      //1
+        $(document).ready(function(){
+  $("p").click(function(){
+    $(this).hide('slow', function(){
+      alert("text is hide");
+    });
+  });
+  $("#btn").mouseenter(function(){
+    alert("click this button");
+  })
+});
+
+// //2
+$(document).ready(function(){
+  $("h1").on({
+    mouseenter:function(){
+      $(this).css("background-color","blue")
+    },
+    mouseleave:function(){
+      $(this).css("background-color","white")
+    },
+    click:function(){
+      $(this).css("background-color","purple")
+    }
+  });
+});
+
+// //3
+$(document).ready(function(){
+  $("#flip").click(function(){
+    $("#panel").slideToggle(1000);
+  });
+});
+
+// //4
+$(document).ready(function(){
+  $("#ani").click(function(){
+    $("#an").animate({
+      border:'1px solid rbg(85 85 85)',
+      color:'white',
+      background:'rbg(85 85 85)',
+      height:'105px',
+      width:'260px',
+      position:'relative',
+      right:'170px',
+      fontsize:'5em'   
+    })
+  });
+});
+
+    </script>
+</body>
+</html>
